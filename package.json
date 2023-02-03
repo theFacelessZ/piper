@@ -1,5 +1,5 @@
 {
-  "name": "piper",
+  "name": "@a.lupow/piper",
   "version": "0.0.1",
   "description": "A small POC library with simple functional pipe implementation.",
   "main": "dist/index.js",
