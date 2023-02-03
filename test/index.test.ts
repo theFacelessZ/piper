@@ -95,3 +95,15 @@ it('should return the correct toString', () => {
   const piper = new Piper(2);
   expect(piper.toString()).toBe('2');
 });
+
+it('should reproduce real world example (jest cli)', () => {
+  const value = pipe(
+    Object.keys(process.env)
+      .map(v => `${v}=${process.env[v]}`)
+      .join(' ')
+  )
+    .pipe(v => `$ ${v}`)
+    .pipe(v => (console.log(v), v));
+
+  expect(typeof value.value).toEqual('string');
+});
